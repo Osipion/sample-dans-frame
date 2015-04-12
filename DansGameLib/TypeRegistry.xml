@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <TypeRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Entries>
     <TypeRegisterEntry CreationIndex="0">
@@ -13,6 +13,13 @@
         <IsSingleton>true</IsSingleton>
         <InterfaceType>DansGameCore.ICharacter, DansGameCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</InterfaceType>
         <ClassType>DansGameCore.Character, DansGameCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</ClassType>
+      </Value>
+    </TypeRegisterEntry>
+    <TypeRegisterEntry CreationIndex="2">
+      <Value>
+        <IsSingleton>false</IsSingleton>
+        <InterfaceType>DansGameLib.IGameLoop, DansGameLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</InterfaceType>
+        <ClassType>DansGameLib.GameLoop, DansGameLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</ClassType>
       </Value>
     </TypeRegisterEntry>
   </Entries>

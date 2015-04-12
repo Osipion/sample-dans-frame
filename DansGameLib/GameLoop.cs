@@ -8,9 +8,27 @@ using DansGameCore;
 namespace DansGameLib
 {
     /// <summary>
+    /// The game loop interface
+    /// </summary>
+    public interface IGameLoop
+    {
+        /// <summary>
+        /// The loaded frames of the game loop
+        /// </summary>
+        IDictionary<Guid, BaseGameFrame> Frames { get; }
+
+        /// <summary>
+        /// Runs the game loop
+        /// </summary>
+        /// <param name="new_character"></param>
+        void Run(bool new_character = false);
+
+    }
+
+    /// <summary>
     /// Represents the fundemental game loop
     /// </summary>
-    public class GameLoop
+    public class GameLoop : IGameLoop
     {
         private static log4net.ILog logger = log4net.LogManager.GetLogger(typeof(GameLoop));
 

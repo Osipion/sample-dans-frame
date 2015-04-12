@@ -102,12 +102,12 @@ namespace DansGameLib.Properties {
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;TypeRegister xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
-        ///  &lt;Entries&gt;
-        ///    &lt;TypeRegisterEntry CreationIndex=&quot;0&quot;&gt;
-        ///      &lt;Value&gt;
-        ///        &lt;IsSingleton&gt;true&lt;/IsSingleton&gt;
-        ///        &lt;InterfaceType&gt;DansGameCore.Serialization.ISerializableCharacter, DansGameCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null&lt;/InterfaceType&gt;
-        ///        &lt;ClassType&gt;DansGameCore.Serialization.SerializableCharacter, DansGameCore, Ver [rest of string was truncated]&quot;;.
+        ///	&lt;Entries&gt;
+        ///		&lt;TypeRegisterEntry CreationIndex=&quot;0&quot;&gt;
+        ///			&lt;Value&gt;
+        ///				&lt;IsSingleton&gt;true&lt;/IsSingleton&gt;
+        ///				&lt;InterfaceType&gt;DansGameCore.Serialization.ISerializableCharacter, DansGameCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null&lt;/InterfaceType&gt;
+        ///				&lt;ClassType&gt;DansGameCore.Serialization.SerializableCharacter, DansGameCore, Version=0.0.0.0, Cult [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string TypeRegistry {
             get {
