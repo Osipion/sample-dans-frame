@@ -19,8 +19,16 @@ namespace DansGameLib
         int GetDecision(IBaseGameFrame frame);
     }
 
+    /// <summary>
+    /// A dummy screen that always returns the first choice passed
+    /// </summary>
     public class DummyScreen : IScreen
     {
+        /// <summary>
+        /// A dummy impementation of IScreen's int GetDecision(IBaseGameFrame frame)
+        /// </summary>
+        /// <param name="frame"></param>
+        /// <returns></returns>
         public int GetDecision(IBaseGameFrame frame)
         {
             return frame.Choices.First().Key;

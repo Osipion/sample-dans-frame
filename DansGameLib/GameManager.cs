@@ -267,6 +267,11 @@ namespace DansGameLib
                 logger.Warn("Could not find an existing character instance to save as the interface was not registered");
         }
 
+        /// <summary>
+        /// Registers an entier TypeRegister with the GameManager
+        /// </summary>
+        /// <param name="registery"></param>
+        /// <param name="overwrite_existing_interface_keys"></param>
         public void RegisterTypeRegister(TypeRegister registery, bool overwrite_existing_interface_keys)
         {
             foreach (var entry in registery.Entries.OrderBy(x => x.CreationIndex))
@@ -323,6 +328,12 @@ namespace DansGameLib
 
         private static log4net.ILog logger = log4net.LogManager.GetLogger(typeof(Extensions));
 
+        /// <summary>
+        /// Allows programatic access to current log4net appender configurations
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="repository"></param>
+        /// <param name="modify"></param>
         public static void ModifyAppenders<T>(this log4net.Repository.ILoggerRepository repository, Action<T> modify) where T : log4net.Appender.AppenderSkeleton
         {
             var appenders = from appender in log4net.LogManager.GetRepository().GetAppenders()
@@ -336,6 +347,11 @@ namespace DansGameLib
             }
         }
 
+        /// <summary>
+        /// Converts a bitmap to a BitmapSource for use in displaying bitmaps in WPF apps
+        /// </summary>
+        /// <param name="bitmap"></param>
+        /// <returns></returns>
         public static System.Windows.Media.Imaging.BitmapSource ToBitmapImage(this System.Drawing.Bitmap bitmap)
         {
 

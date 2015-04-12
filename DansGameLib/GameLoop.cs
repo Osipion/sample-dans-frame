@@ -7,12 +7,18 @@ using DansGameCore;
 
 namespace DansGameLib
 {
+    /// <summary>
+    /// Represents the fundemental game loop
+    /// </summary>
     public class GameLoop
     {
         private static log4net.ILog logger = log4net.LogManager.GetLogger(typeof(GameLoop));
 
         private IDictionary<Guid, BaseGameFrame> frames = null;
 
+        /// <summary>
+        /// Gets a collection of all live frames in Frames.dll
+        /// </summary>
         public IDictionary<Guid, BaseGameFrame> Frames
         {
             get
@@ -34,6 +40,9 @@ namespace DansGameLib
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GameLoop"/> class
+        /// </summary>
         public GameLoop()
         {
 

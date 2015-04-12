@@ -9,6 +9,9 @@ using Frames;
 
 namespace DansGameLib
 {
+    /// <summary>
+    /// Loads frames from Frames.dll
+    /// </summary>
     public static class FrameLoader
     {
         /// <summary>
@@ -57,14 +60,8 @@ namespace DansGameLib
 
                 var a = attrs.First();
 
-                try
-                {
-                    dict.Add(a.ID, (BaseGameFrame)Activator.CreateInstance(t.AsType()));
-                }
-                catch(Exception e)
-                {
-                    throw;
-                }
+                dict.Add(a.ID, (BaseGameFrame)Activator.CreateInstance(t.AsType()));
+
             }
 
             if (!found_first_frame)

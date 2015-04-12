@@ -9,6 +9,9 @@ using DansGameCore.Serialization;
 
 namespace DansGameLib
 {
+    /// <summary>
+    /// Provides the basic set of types which the GameManager looks up. Serializable
+    /// </summary>
     [Serializable]
     public class TypeRegister
     {
@@ -16,57 +19,59 @@ namespace DansGameLib
         private static Lazy<XmlSerializer> serializer =
             new Lazy<XmlSerializer>(() => new XmlSerializer(typeof(TypeRegister)));
 
+        /// <summary>
+        /// A list of types to register
+        /// </summary>
         [XmlArray(IsNullable = false)]
         public TypeRegisterEntry[] Entries { get; set; }
 
+        /// <summary>
+        /// Save the type registry to file
+        /// </summary>
+        /// <param name="file"></param>
         public void Save(string file)
         {
             using (var writer = new System.IO.StreamWriter(file))
                 serializer.Value.Serialize(writer, this);
         }
 
+        /// <summary>
+        /// Load a TypeRegister from a stream
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <returns></returns>
         public static TypeRegister Load(System.IO.Stream stream)
         {
             return (TypeRegister)serializer.Value.Deserialize(stream);
         }
 
+        /// <summary>
+        /// Load a TypeRegister from a file
+        /// </summary>
+        /// <param name="file"></param>
+        /// <returns></returns>
         public static TypeRegister Load(string file)
         {
             using (var reader = new System.IO.StreamReader(file))
                 return TypeRegister.Load(reader.BaseStream);
         }
-
-        //public void Register(bool overwrite_existing_interface_keys)
-        //{
-        //    foreach (var entry in this.Entries.OrderBy(x => x.CreationIndex))
-        //    {
-        //        if (entry.Value.InterfaceType.Equals(typeof(ICharacter)))
-        //        {
-        //            var inner = GameManager.Get<ISerializableCharacter>();
-
-        //            entry.Value.Instance = new Character(inner);
-
-        //        }
-        //        else if (entry.Value.InterfaceType.Equals(typeof(ISerializableCharacter)))
-        //        {
-        //            var target = System.IO.Path.ChangeExtension(Properties.Resources.CharacterFileName, SerializableCharacter.CharacterFileExtension);
-
-        //            if (System.IO.File.Exists(target))
-        //                entry.Value.Instance = SerializableCharacter.Load(target);
-        //        }
-
-        //        GameManager.Manager.RegisterTypeEntry(entry.Value, overwrite_existing_interface_keys);
-        //    }
-
-        //}
     }
 
+    /// <summary>
+    /// An entry in the type registry
+    /// </summary>
     [Serializable]
     public class TypeRegisterEntry
     {
+        /// <summary>
+        /// The order in which to create this type (from lowest to highest)
+        /// </summary>
         [XmlAttribute]
         public int CreationIndex { get; set; }
 
+        /// <summary>
+        /// The TypeLookupItem containing the interface / class type match
+        /// </summary>
         [XmlElement]
         public TypeLookupItem Value { get; set; }
     }

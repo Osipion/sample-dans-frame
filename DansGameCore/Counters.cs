@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DansGameCore
 {
-
-     
-
+    /// <summary>
+    /// Represents a collection of counters stored about a character.
+    /// </summary>
     public class Counters : IEnumerable<KeyValuePair<string, double>>
     {
         /// <summary>
