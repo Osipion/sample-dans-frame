@@ -1,0 +1,34 @@
+﻿<Window x:Class="DansGameLib.Controls.ImageScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:src="clr-namespace:DansGameLib.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="400" WindowStyle="None" ResizeMode="CanResizeWithGrip" MouseDown="Window_MouseDown" AllowsTransparency="True" Background="Transparent">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/GameScreen.png"/>
+        </Grid.Background>
+        <StackPanel Margin="30,35">
+            <StackPanel x:Name="stkpTools" Orientation="Horizontal" Margin="10,10">
+                <Label x:Name="labNewGame" Foreground="White" FontFamily="OCR A Extended" MouseDoubleClick="labNewGame_MouseDoubleClick">New Game</Label>
+                <Label x:Name="labSave" Foreground="White" FontFamily="OCR A Extended" MouseDoubleClick="labSave_MouseDoubleClick">Save</Label>
+                <Label x:Name="labQuit" Foreground="White" FontFamily="OCR A Extended" MouseDoubleClick="labQuit_MouseDoubleClick">Quit</Label>
+            </StackPanel>
+            <Image x:Name="imgMainImage" HorizontalAlignment="Stretch"/>
+            <TextBox TextWrapping="WrapWithOverflow" Background="Transparent" x:Name="labMessage" HorizontalContentAlignment="Center" Foreground="White" FontFamily="OCR A Extended"/>
+            <ListBox Background="#00000000" x:Name="lbOptions" Foreground="White" FontFamily="OCR A Extended">
+                <ListBox.ItemTemplate>
+                    <DataTemplate DataType="{x:Type src:OptionDisplayer}">
+                        <StackPanel>
+                            <TextBlock Margin="3" Text="{Binding Message}"/>
+                            <ContentControl Margin="3" Content="{Binding Image}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Label x:Name="labSelect" HorizontalContentAlignment="Center" Foreground="White" FontFamily="OCR A Extended" MouseDoubleClick="labSelect_MouseDoubleClick">Select</Label>
+        </StackPanel>
+    </Grid>
+</Window>

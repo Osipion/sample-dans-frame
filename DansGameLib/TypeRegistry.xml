@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TypeRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Entries>
+    <TypeRegisterEntry CreationIndex="0">
+      <Value>
+        <IsSingleton>true</IsSingleton>
+        <InterfaceType>DansGameCore.Serialization.ISerializableCharacter, DansGameCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</InterfaceType>
+        <ClassType>DansGameCore.Serialization.SerializableCharacter, DansGameCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</ClassType>
+      </Value>
+    </TypeRegisterEntry>
+    <TypeRegisterEntry CreationIndex="1">
+      <Value>
+        <IsSingleton>true</IsSingleton>
+        <InterfaceType>DansGameCore.ICharacter, DansGameCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</InterfaceType>
+        <ClassType>DansGameCore.Character, DansGameCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</ClassType>
+      </Value>
+    </TypeRegisterEntry>
+  </Entries>
+</TypeRegister>
